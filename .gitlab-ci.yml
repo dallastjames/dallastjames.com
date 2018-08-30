@@ -61,6 +61,7 @@ deploy:
     - ssh-keyscan dallastjames.com >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
   script:
+    - cp pm2.json dist/pm2.json
     - mv dist dist_new
     - scp -o StrictHostKeyChecking=no -r dist_new/ deploy@dallastjames.com:/home/web/sites/dallastjames/prod
     - ssh -o StrictHostKeyChecking=no -tt deploy@dallastjames.com << EOF
@@ -68,6 +69,7 @@ deploy:
     - rm -rf dist_old
     - mv dist dist_old
     - mv dist_new dist
+    - mv dist/pm2.json pm2.json
     - pm2 reload pm2.json
     - ls
     - exit
