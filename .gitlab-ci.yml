@@ -39,7 +39,6 @@ dallastjames-build:
     - npm run dallastjames:build:prod
     - npm run dallastjames:build:server
     - npm run dallastjames:build:webpack
-    - npm run dallastjames:build:pm2
   artifacts:
     paths:
     - dist
