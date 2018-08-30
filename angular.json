@@ -1,0 +1,146 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "",
+    "projects": {
+        "dallastjames": {
+            "root": "apps/dallastjames/app",
+            "sourceRoot": "apps/dallastjames/app/src",
+            "projectType": "application",
+            "prefix": "apps/dallastjames",
+            "schematics": {},
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/dallastjames/browser",
+                        "index": "apps/dallastjames/app/src/index.html",
+                        "main": "apps/dallastjames/app/src/main.ts",
+                        "polyfills": "apps/dallastjames/app/src/polyfills.ts",
+                        "tsConfig": "apps/dallastjames/app/tsconfig.app.json",
+                        "assets": [
+                            "apps/dallastjames/app/src/favicon.ico",
+                            "apps/dallastjames/app/src/assets"
+                        ],
+                        "styles": ["apps/dallastjames/app/src/styles.scss"],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace":
+                                        "apps/dallastjames/app/src/environments/environment.ts",
+                                    "with":
+                                        "apps/dallastjames/app/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "dallastjames:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "dallastjames:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "dallastjames:build"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "apps/dallastjames/app/src/test.ts",
+                        "polyfills": "apps/dallastjames/app/src/polyfills.ts",
+                        "tsConfig": "apps/dallastjames/app/tsconfig.spec.json",
+                        "karmaConfig": "apps/dallastjames/app/karma.conf.js",
+                        "styles": ["apps/dallastjames/app/src/styles.scss"],
+                        "scripts": [],
+                        "assets": [
+                            "apps/dallastjames/app/src/favicon.ico",
+                            "apps/dallastjames/app/src/assets"
+                        ]
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/dallastjames/app/tsconfig.app.json",
+                            "apps/dallastjames/app/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**"]
+                    }
+                },
+                "server": {
+                    "builder": "@angular-devkit/build-angular:server",
+                    "options": {
+                        "outputPath": "dist/apps/dallastjames/server",
+                        "main": "apps/dallastjames/app/src/main.server.ts",
+                        "tsConfig":
+                            "apps/dallastjames/app/tsconfig.server.json",
+                        "fileReplacements": [
+                            {
+                                "replace":
+                                    "apps/dallastjames/app/src/environments/environment.ts",
+                                "with":
+                                    "apps/dallastjames/app/src/environments/environment.prod.ts"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "dallastjames-e2e": {
+            "root": "apps/dallastjames/e2e",
+            "projectType": "application",
+            "architect": {
+                "e2e": {
+                    "builder": "@angular-devkit/build-angular:protractor",
+                    "options": {
+                        "protractorConfig":
+                            "apps/dallastjames/e2e/protractor.conf.js",
+                        "devServerTarget": "dallastjames:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "dallastjames:serve:production"
+                        }
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": "apps/dallastjames/e2e/tsconfig.e2e.json",
+                        "exclude": ["**/node_modules/**"]
+                    }
+                }
+            }
+        }
+    },
+    "cli": {
+        "warnings": {
+            "typescriptMismatch": false,
+            "versionMismatch": false
+        },
+        "defaultCollection": "@nrwl/schematics"
+    },
+    "defaultProject": "dallastjames"
+}

@@ -1,0 +1,73 @@
+stages:
+  - setup
+  - tests
+  - build
+  - deploy
+
+npm-install:
+  image: node:10.6.0
+  stage: setup
+  script:
+    - npm ci
+  artifacts:
+    paths:
+      - node_modules
+    expire_in: 20 mins
+
+lint:
+  image: node:10.6.0
+  stage: tests
+  dependencies:
+    - npm-install
+  script:
+    - npm run dallastjames:lint
+
+test:
+  image: amio/node-chrome
+  stage: tests
+  dependencies:
+    - npm-install
+  script:
+    - npm run dallastjames:test
+
+dallastjames-build:
+  image: node:10.6.0
+  stage: build
+  dependencies:
+    - npm-install
+  script:
+    - npm run dallastjames:build:prod
+    - npm run dallastjames:build:server
+    - npm run dallastjames:build:webpack
+    - npm run dallastjames:build:pm2
+  artifacts:
+    paths:
+    - dist
+    expire_in: 20 mins
+
+deploy:
+  image: node:10.6.0
+  stage: deploy
+  only:
+    - master
+  dependencies:
+    - dallastjames-build
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan dallastjames.com >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - mv dist dist_new
+    - scp -o StrictHostKeyChecking=no -r dist_new/ deploy@dallastjames.com:/home/web/sites/dallastjames/prod
+    - ssh -o StrictHostKeyChecking=no -tt deploy@dallastjames.com << EOF
+    - cd /home/web/sites/dallastjames/prod
+    - rm -rf dist_old
+    - mv dist dist_old
+    - mv dist_new dist
+    - pm2 reload pm2.json
+    - ls
+    - exit
