@@ -1,10 +1,12 @@
 {
-  "extends": "./tsconfig.app.json",
-  "compilerOptions": {
-    "outDir": "../../../dist/out-tsc/apps/dallastjames-server",
-    "baseUrl": "."
-  },
-  "angularCompilerOptions": {
-    "entryModule": "src/app/app.server.module#AppServerModule"
-  }
+    "extends": "./tsconfig.app.json",
+    "compilerOptions": {
+        "outDir": "../../../dist/out-tsc/apps/dallastjames-server",
+        "module": "commonjs",
+        "types": []
+    },
+    "exclude": ["server.ts", "test.ts", "**/*.spec.ts"],
+    "angularCompilerOptions": {
+        "entryModule": "src/app/app.server.module#AppServerModule"
+    }
 }
