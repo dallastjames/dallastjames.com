@@ -1,14 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NxModule } from '@nrwl/nx';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NxModule } from '@nrwl/nx';
 
 @NgModule({
     declarations: [AppComponent],
     imports: [
         BrowserModule.withServerTransition({ appId: 'serverApp' }),
-        NxModule.forRoot()
+        NxModule.forRoot(),
+        RouterModule.forRoot(
+            [
+                {
+                    path: '',
+                    loadChildren: '@dtj/app/home/home.module#HomeModule'
+                }
+            ],
+            {
+                initialNavigation: 'enabled',
+                scrollPositionRestoration: 'enabled'
+            }
+        )
     ],
     providers: [],
     bootstrap: [AppComponent]

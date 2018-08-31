@@ -7,7 +7,7 @@
             "root": "apps/dallastjames/app",
             "sourceRoot": "apps/dallastjames/app/src",
             "projectType": "application",
-            "prefix": "apps/dallastjames",
+            "prefix": "dallastjames",
             "schematics": {},
             "architect": {
                 "build": {

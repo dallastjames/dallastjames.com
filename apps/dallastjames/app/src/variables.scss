@@ -1,0 +1,141 @@
+// Variables
+$navbar-height: 64px;
+
+// Colors
+$dallastjames-colors: (
+    primary: #1E5F5F,
+    primary-faded: rgba(30, 95, 95, 0.5),
+    accent: #293D6A,
+    accent-faded: rgba(41, 61, 106, 0.5),
+    warn: #9E6332,
+    warn-faded: rgba(158, 99, 50, 0.5),
+    font-white: white,
+    input-placeholder: #717171,
+    gray-accessible-light: #717171,
+    light-gray: #d1d1d1,
+    med-gray: #4e4e4e,
+    gray: #adadad,
+    bg-color: #252934,
+    bg-color-faded: rgba(37, 41, 52, 0.7)
+);
+
+@function color($color-name) {
+    $color-value: map-get($dallastjames-colors, $color-name);
+    @return $color-value;
+}
+
+@function font($font-name) {
+    $font-value: map-get($sessions-fonts, $font-name);
+    @return $font-value;
+}
+
+@function theme-color($theme, $color) {
+    $color-value: map-get($theme, $color);
+    @return $color-value;
+}
+
+$black-87-opacity: rgba(black, 0.87);
+$white-87-opacity: rgba(white, 0.87);
+$black-12-opacity: rgba(black, 0.12);
+$white-12-opacity: rgba(white, 0.12);
+$black-6-opacity: rgba(black, 0.06);
+$white-6-opacity: rgba(white, 0.06);
+
+$dallastjames-primary-theme: (
+  50: #E4ECEC,
+  100: #BCCFCF,
+  200: #8FAFAF,
+  300: #628F8F,
+  400: #407777,
+  500: #1E5F5F,
+  600: #1A5757,
+  700: #164D4D,
+  800: #124343,
+  900: #0A3232,
+  A100: #6DFFFF,
+  A200: #3AFFFF,
+  A400: #07FFFF,
+  A700: #00ECEC,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  )
+);
+
+$dallastjames-accent-theme: (
+  50: #E5E8ED,
+  100: #BFC5D2,
+  200: #949EB5,
+  300: #687696,
+  400: #495A80,
+  500: #293D6A,
+  600: #243762,
+  700: #1F2F57,
+  800: #19274D,
+  900: #0F1A3C,
+  A100: #7794FF,
+  A200: #446BFF,
+  A400: #1143FF,
+  A700: #0034F6,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+$dallastjames-warn-theme: (
+  50: #F3ECE6,
+  100: #E2D0C2,
+  200: #CFB199,
+  300: #BB9270,
+  400: #AD7A51,
+  500: #9E6332,
+  600: #965B2D,
+  700: #8C5126,
+  800: #82471F,
+  900: #703513,
+  A100: #FFC4A7,
+  A200: #FFA274,
+  A400: #FF7F41,
+  A700: #FF6E27,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  )
+);

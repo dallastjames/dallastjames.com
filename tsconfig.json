@@ -10,7 +10,12 @@
         "typeRoots": ["node_modules/@types"],
         "lib": ["es2017", "dom"],
         "baseUrl": ".",
-        "paths": {}
+        "paths": {
+            "@dtj/core/*": ["apps/dallastjames/app/src/app/core/*"],
+            "@dtj/shared/*": ["apps/dallastjames/app/src/app/shared/*"],
+            "@dtj/env": ["apps/dallastjames/app/src/environments/environment.ts"],
+            "@dtj/*": ["apps/dallastjames/app/src/*"]
+        }
     },
     "exclude": ["node_modules", "tmp"]
 }

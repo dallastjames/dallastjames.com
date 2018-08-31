@@ -1,0 +1,26 @@
+@import 'apps/dallastjames/app/src/variables.scss';
+
+:host {
+    width: 100%;
+
+    .public-container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+
+        .public-navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: $navbar-height;
+            background: color(bg-color);
+            background: linear-gradient(to bottom, color(bg-color) 0%, color(bg-color) 40%, color(bg-color-faded) 100%);
+        }
+
+        .public-content {
+            padding-top: $navbar-height;
+        }
+    }
+}

@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Fira+Sans+Condensed:600');
+@import 'apps/dallastjames/app/src/variables.scss';
+
+@include mat-core();
+
+$dallastjames-app-primary: mat-palette($dallastjames-primary-theme);
+$dallastjames-app-accent: mat-palette($dallastjames-accent-theme);
+$dallastjames-app-warn: mat-palette($dallastjames-warn-theme);
+
+$dallastjames-app-theme: mat-light-theme($dallastjames-app-primary, $dallastjames-app-accent, $dallastjames-app-warn);
+@include angular-material-theme($dallastjames-app-theme);
+
+html {
+    height: 100%;
+}
+
+* {
+    font-family: 'Fira Sans', sans-serif;
+    color: color(font-white);
+}
+
+body {
+    height: 100%;
+    margin: 0px;
+}
+
+dallastjames-root {
+    display: flex;
+    background-color: color(bg-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: 600;
+}
+
+p, div, span, button,
+input, select, textarea {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+}
