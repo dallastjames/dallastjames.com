@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PublicNavbarComponent } from './public-navbar.component';
+import { NavItemComponent } from '@dtj/shared/components';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('PublicNavbarComponent', () => {
     let component: PublicNavbarComponent;
@@ -8,7 +10,8 @@ describe('PublicNavbarComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [PublicNavbarComponent]
+            imports: [RouterTestingModule],
+            declarations: [PublicNavbarComponent, NavItemComponent]
         }).compileComponents();
     }));
 

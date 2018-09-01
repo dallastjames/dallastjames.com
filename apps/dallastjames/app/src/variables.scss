@@ -1,5 +1,6 @@
 // Variables
 $navbar-height: 64px;
+$max-page-width: 1080px;
 
 // Colors
 $dallastjames-colors: (
@@ -10,13 +11,14 @@ $dallastjames-colors: (
     warn: #9E6332,
     warn-faded: rgba(158, 99, 50, 0.5),
     font-white: white,
+    font-white-darker: #cccccc,
     input-placeholder: #717171,
     gray-accessible-light: #717171,
     light-gray: #d1d1d1,
     med-gray: #4e4e4e,
     gray: #adadad,
     bg-color: #252934,
-    bg-color-faded: rgba(37, 41, 52, 0.7)
+    bg-color-faded: rgba(102, 105, 112, 0.3)
 );
 
 @function color($color-name) {

@@ -1,3 +1,18 @@
-<nav>
-    I'm the navigation!
+<nav class="navigation">
+    <h2 class="site-label">Dallas James</h2>
+    <span class="spacer"></span>
+    <ul class="nav-items" role="navigation">
+        <li
+            *ngFor="let navItem of navItems"
+            class="nav-item"
+            [routerLink]="navItem.route"
+            routerLinkActive="active">
+            {{ navItem.label }}
+        </li>
+        <li class="nav-item site-code">
+            <a href="https://gitlab.com/dallastjames/dallastjames.com" target="_blank">
+                <img src="assets/gitlab.svg" alt="gitlab-logo">
+            </a>
+        </li>
+    </ul>
 </nav>

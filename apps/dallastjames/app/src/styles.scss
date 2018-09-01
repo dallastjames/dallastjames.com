@@ -18,17 +18,16 @@ html {
 
 * {
     font-family: 'Fira Sans', sans-serif;
-    color: color(font-white);
 }
 
 body {
     height: 100%;
     margin: 0px;
+    color: color(bg-color);
 }
 
 dallastjames-root {
     display: flex;
-    background-color: color(bg-color);
 }
 
 h1, h2, h3, h4, h5, h6 {

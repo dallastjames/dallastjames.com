@@ -1,0 +1,46 @@
+@import 'apps/dallastjames/app/src/variables.scss';
+
+:host {
+    .navigation {
+        display: flex;
+        align-items: center;
+        max-width: $max-page-width;
+        margin: auto;
+        height: 100%;
+    }
+
+    .site-label {
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    .spacer {
+        flex: 1;
+    }
+
+    .nav-items {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-item {
+        padding: 0 20px;
+        cursor: pointer;
+        height: $navbar-height;
+        line-height: $navbar-height;
+
+        &:hover {
+            color: color(font-white-darker);
+        }
+    }
+
+    .site-code {
+        img {
+            height: 32px;
+            padding-top: 14px;
+        }
+    }
+}

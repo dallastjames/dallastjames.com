@@ -7,13 +7,13 @@ import {
 import { NavItem } from '@dtj/core/models';
 
 @Component({
-    selector: 'dallastjames-public-navbar',
-    templateUrl: './public-navbar.component.html',
-    styleUrls: ['./public-navbar.component.scss'],
+    selector: 'dallastjames-nav-item',
+    templateUrl: './nav-item.component.html',
+    styleUrls: ['./nav-item.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PublicNavbarComponent implements OnInit {
-    @Input() public navItems: NavItem[] = [];
+export class NavItemComponent implements OnInit {
+    @Input() public navItem: NavItem;
 
     constructor() {}
 
