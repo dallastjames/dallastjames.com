@@ -31,6 +31,7 @@
         cursor: pointer;
         height: $navbar-height;
         line-height: $navbar-height;
+        white-space: nowrap;
 
         &:hover {
             color: color(font-white-darker);

@@ -1,0 +1,150 @@
+@import 'apps/dallastjames/app/src/variables.scss';
+
+:host {
+    .hero {
+        position: relative;
+        height: calc(100vh - #{$navbar-height} + 4px);
+    }
+
+    .hero-image-container {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        background-image: url('/assets/hero-bg2.jpg');
+        background-size: cover;
+        background-position: left center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+
+        @media screen and (max-width: 1280px) {
+            background-attachment: scroll;
+        }
+
+        &:not(.bg) {
+            filter: blur(4px);
+        }
+    }
+
+    .hero-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 20;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        color: white;
+
+        .tag {
+            font-size: 40px;
+            text-align: center;
+        }
+
+        .sub {
+            font-size: 30px;
+            text-align: center;
+        }
+    }
+
+    .spacer {
+        flex: 1;
+
+        &:not(:first-of-type) {
+            flex: 2;
+        }
+    }
+
+    .indicator {
+        width: 100%;
+        padding-bottom: 20px;
+
+        // .arrow-down {
+        //     margin: auto;
+        //     border-bottom: 2px solid white;
+        //     width: 30px;
+        //     height: 30px;
+        //     display: block;
+        //     cursor: pointer;
+        //     transition: transform 0.22s ease-in-out;
+
+        //     &:hover {
+        //         transform: rotate(45deg);
+        //         border-right: 2px solid white;
+        //     }
+        // }
+
+        .arrow {
+            margin: auto;
+            cursor: pointer;
+            height: 30px;
+            width: 30px;
+            position: relative;
+            transform: rotate(90deg);
+
+            $transition-time: 0.15s;
+
+            &-right,
+            &-left {
+                background-color: color(gray);
+                height: 4px;
+                left: -5px;
+                position: absolute;
+                top: 50%;
+                width: 100%;
+
+                &:after {
+                    background-color: color(font-white);
+                    content: '';
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    transition: all $transition-time;
+                }
+
+                @media (pointer: coarse) {
+                    background-color: color(font-white);
+                }
+            }
+
+            &-right {
+                transform: rotate(45deg);
+                transform-origin: bottom right;
+
+                &:after {
+                    left: 100%;
+                    right: 0;
+                    transition-delay: 0s;
+                }
+            }
+
+            &-left {
+                transform: rotate(-45deg);
+                transform-origin: top right;
+
+                &:after {
+                    left: 0;
+                    right: 100%;
+                    transition-delay: $transition-time;
+                }
+            }
+
+            &:hover {
+                .arrow-right:after {
+                    left: 0;
+                    transition-delay: $transition-time;
+                }
+
+                .arrow-left:after {
+                    right: 0;
+                    transition-delay: 0s;
+                }
+            }
+        }
+    }
+}

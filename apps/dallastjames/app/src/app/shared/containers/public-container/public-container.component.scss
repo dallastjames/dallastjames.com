@@ -22,7 +22,7 @@
         }
 
         .public-content {
-            padding-top: $navbar-height;
+            padding-top: calc(#{$navbar-height} - 2px);
             background-color: white;
         }
     }

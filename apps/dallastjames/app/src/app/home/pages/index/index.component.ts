@@ -16,4 +16,12 @@ export class IndexComponent implements OnInit {
         let i = 1;
         this.loops = this.loops.map(() => i++);
     }
+
+    public scrollTo(el: HTMLDivElement): void {
+        const options: ScrollIntoViewOptions = {
+            behavior: 'smooth',
+            block: 'start'
+        };
+        el.scrollIntoView(options);
+    }
 }

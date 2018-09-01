@@ -1,10 +1,6 @@
-<div class="hero">
-    <div class="hero-image-container">
-        <img src="assets/hero-bg.jpg">
-    </div>
-    <div class="hero-content">
-        <h1>Dallas James</h1>
-    </div>
+<dallastjames-hero (scrollClicked)="scrollTo(content1)"></dallastjames-hero>
+<div #content1>
+    Primary Underfold content
 </div>
 <button mat-raised-button color="primary">Primary</button>
 <button mat-raised-button color="accent">Accent</button>
@@ -14,4 +10,7 @@
 </div>
 <div class="super-box" *ngFor="let l of loops">
     So much content! {{ l }}
+</div>
+<div #content2>
+    Bottom Content
 </div>
