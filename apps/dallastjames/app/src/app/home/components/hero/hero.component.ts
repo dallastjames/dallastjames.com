@@ -3,7 +3,8 @@ import {
     OnInit,
     ChangeDetectionStrategy,
     Output,
-    EventEmitter
+    EventEmitter,
+    Input
 } from '@angular/core';
 
 @Component({
@@ -13,6 +14,8 @@ import {
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeroComponent implements OnInit {
+    @Input() public production: boolean = true;
+
     @Output()
     public scrollClicked: EventEmitter<void> = new EventEmitter<void>();
 

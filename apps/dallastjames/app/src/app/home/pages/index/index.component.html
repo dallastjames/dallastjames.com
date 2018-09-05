@@ -1,16 +1,20 @@
-<dallastjames-hero (scrollClicked)="scrollTo(content1)"></dallastjames-hero>
+<dallastjames-hero (scrollClicked)="scrollTo(content1)" [production]="production"></dallastjames-hero>
 <div #content1>
-    Primary Underfold content
+    <ng-container *ngIf="!production">
+        Primary Underfold content
+    </ng-container>
 </div>
-<button mat-raised-button color="primary">Primary</button>
-<button mat-raised-button color="accent">Accent</button>
-<button mat-raised-button color="warn">Warn</button>
-<div>
-    Pretend we have lots of content!!
-</div>
-<div class="super-box" *ngFor="let l of loops">
-    So much content! {{ l }}
-</div>
-<div #content2>
-    Bottom Content
-</div>
+<ng-container *ngIf="!production">
+    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
+    <div>
+        Pretend we have lots of content!!
+    </div>
+    <div class="super-box" *ngFor="let l of loops">
+        So much content! {{ l }}
+    </div>
+    <div #content2>
+        Bottom Content
+    </div>
+</ng-container>
