@@ -15,7 +15,7 @@ enableProdMode();
 // Express server
 const app = express();
 
-const defaultPort = 8080;
+const defaultPort = 5001;
 const PORT = process.env.PORT || defaultPort;
 const DIST_FOLDER = join(process.cwd(), 'dist/apps/dallastjames');
 
