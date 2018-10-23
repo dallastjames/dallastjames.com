@@ -1,3 +1,10 @@
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_DRIVER: overlay2
+  CONTAINER_IMAGE: registry.gitlab.com/$CI_PROJECT_PATH
+  CONTAINER_TEST_IMAGE: registry.gitlab.com/dallastjames/divvylive/production:$CI_COMMIT_REF_NAME
+  CONTAINER_RELEASE_IMAGE: registry.gitlab.com/dallastjames/divvylive/production:latest
+
 stages:
   - setup
   - tests
@@ -30,45 +37,41 @@ test:
   script:
     - npm run dallastjames:test
 
-dallastjames-build:
-  image: node:10.6.0
+dallastjames-build-prod:
+  image: docker:stable
+  services:
+    - docker:dind
   stage: build
-  dependencies:
-    - npm-install
-  script:
-    - npm run dallastjames:build:prod
-    - npm run dallastjames:build:server
-    - npm run dallastjames:build:webpack
-  artifacts:
-    paths:
-    - dist
-    expire_in: 20 mins
-
-deploy:
-  image: node:10.6.0
-  stage: deploy
   only:
     - master
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
+  script:
+    - docker build -f ./Dockerfile --tag $CONTAINER_IMAGE/dallastjames:$CI_BUILD_REF --tag $CONTAINER_IMAGE/dallastjames:latest .
+    - docker push $CONTAINER_IMAGE/dallastjames:$CI_BUILD_REF
+    - docker push $CONTAINER_IMAGE/dallastjames:latest
+
+dallastjames-deploy:
+  stage: deploy
   dependencies:
-    - dallastjames-build
+    - dallastjames-build-prod
+  only:
+    - master
+  environment:
+    name: production
+    url: https://dallastjames.com
   before_script:
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
     - eval $(ssh-agent -s)
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
-    - ssh-keyscan dallastjames.com >> ~/.ssh/known_hosts
+    - ssh-keyscan 35.230.87.53 >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
   script:
-    - cp pm2.json dist/pm2.json
-    - mv dist dist_new
-    - scp -o StrictHostKeyChecking=no -r dist_new/ deploy@dallastjames.com:/home/web/sites/dallastjames/prod
-    - ssh -o StrictHostKeyChecking=no -tt deploy@dallastjames.com << EOF
-    - cd /home/web/sites/dallastjames/prod
-    - rm -rf dist_old
-    - mv dist dist_old
-    - mv dist_new dist
-    - mv dist/pm2.json pm2.json
-    - pm2 reload pm2.json
-    - ls
+    - ssh -o StrictHostKeyChecking=no -tt deploy@35.230.87.53 << EOF
+    - docker pull $CONTAINER_IMAGE/dallastjames:latest
+    - docker container stop dallastjames
+    - docker container rm dallastjames
+    - docker run -dit -p 5001:5001 --name=dallastjames --restart=unless-stopped $CONTAINER_IMAGE/dallastjames:latest
     - exit
