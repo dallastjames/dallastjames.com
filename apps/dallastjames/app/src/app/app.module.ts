@@ -13,6 +13,11 @@ import { AppComponent } from './app.component';
         RouterModule.forRoot(
             [
                 {
+                    path: 'portfolio',
+                    loadChildren:
+                        '@dtj/app/portfolio/portfolio.module#PortfolioModule'
+                },
+                {
                     path: '',
                     loadChildren: '@dtj/app/home/home.module#HomeModule'
                 }

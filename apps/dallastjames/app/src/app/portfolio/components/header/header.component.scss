@@ -1,0 +1,38 @@
+@import 'apps/dallastjames/app/src/variables.scss';
+
+:host {
+    .nav-items {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-item {
+        padding: 0 20px;
+        cursor: pointer;
+        height: $navbar-height;
+        line-height: $navbar-height;
+        white-space: nowrap;
+        font-size: 20px;
+        min-width: 120px;
+        color: color(text);
+
+        &:hover {
+            color: color(font-white-darker);
+        }
+    }
+
+    .site-code {
+        a {
+            font-size: 20px;
+            padding: 8px 20px;
+            border-radius: 30px;
+        }
+
+        img {
+            height: 34px;
+        }
+    }
+}

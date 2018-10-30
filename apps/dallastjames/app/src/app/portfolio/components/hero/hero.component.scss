@@ -1,0 +1,136 @@
+@import 'apps/dallastjames/app/src/variables.scss';
+
+$header-height: 64px;
+$header-padding-top: 20px;
+$footer-height: 12px;
+$header-left-padding: 80px;
+$header-right-padding: 60px;
+
+:host {
+    .hero {
+        height: calc(100vh - #{$footer-height});
+    }
+
+    .header {
+        width: calc(100% - #{$header-right-padding} - #{$header-left-padding});
+        position: absolute;
+        z-index: 10;
+        height: $header-height;
+        top: 0;
+        display: flex;
+        align-items: center;
+        padding: $header-padding-top $header-right-padding 0 $header-left-padding;
+
+        .spacer {
+            flex: 1;
+        }
+
+        h3 {
+            color: white;
+            font-weight: bold;
+            font-size: 38px;
+            margin: 0;
+        }
+    }
+
+    .content {
+        height: 100%;
+        display: flex;
+        position: relative;
+    }
+
+    .section {
+        height: calc(100% - #{$header-height} - #{$header-padding-top});
+        padding-top: $header-height + $header-padding-top;
+        background-color: white;
+        position: relative;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+
+        &.right {
+            background-color: color(primary);
+            flex: 3;
+            z-index: 9;
+        }
+
+        &.left {
+            flex: 7;
+            z-index: 8;
+        }
+
+        .my-image {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background-color: color(primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -30px;
+            right: -180px;
+
+            .backdrop {
+                height: 92%;
+                width: 92%;
+                background-color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .image-border {
+                    background-color: color(primary);
+                    height: 75%;
+                    width: 75%;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        width: 88%;
+                        height: 88%;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+
+        .title-content {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .title {
+                margin-top: -15%;
+            }
+
+            .title h1 {
+                color: color(primary);
+                font-size: 120px;
+                margin: 0;
+            }
+
+            .title .dark {
+                color: color(text);
+            }
+
+            .title h2 {
+                color: color(text);
+                font-size: 28px;
+                margin: -28px 0 0;
+                text-align: center;
+            }
+        }
+    }
+
+    .footer {
+        width: 100%;
+        height: $footer-height;
+        background-color: color(primary);
+    }
+}
