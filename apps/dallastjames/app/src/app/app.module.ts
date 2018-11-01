@@ -4,6 +4,11 @@ import { NxModule } from '@nrwl/nx';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faIcons } from './fa-icons';
+
+library.add(...faIcons);
 
 @NgModule({
     declarations: [AppComponent],
@@ -26,7 +31,8 @@ import { AppComponent } from './app.component';
                 initialNavigation: 'enabled',
                 scrollPositionRestoration: 'enabled'
             }
-        )
+        ),
+        FontAwesomeModule
     ],
     providers: [],
     bootstrap: [AppComponent]

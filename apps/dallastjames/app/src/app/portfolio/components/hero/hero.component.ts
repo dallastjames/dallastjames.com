@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent implements OnInit {
+    public heroQuote: string = `
+        BE LEGENDARY
+    `;
+
     constructor() {}
 
     ngOnInit(): void {}

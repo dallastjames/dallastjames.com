@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IndexComponent } from './index.component';
 import { HeaderComponent } from '../../components/header/header.component';
 import { HeroComponent } from '../../components/hero/hero.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('IndexComponent', () => {
     let component: IndexComponent;
@@ -10,6 +11,7 @@ describe('IndexComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
+            imports: [FontAwesomeModule],
             declarations: [IndexComponent, HeaderComponent, HeroComponent]
         }).compileComponents();
     }));
