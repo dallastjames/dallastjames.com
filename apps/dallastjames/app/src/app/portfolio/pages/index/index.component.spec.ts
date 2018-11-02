@@ -4,6 +4,11 @@ import { IndexComponent } from './index.component';
 import { HeaderComponent } from '../../components/header/header.component';
 import { HeroComponent } from '../../components/hero/hero.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AboutMeComponent } from '../../components/about-me/about-me.component';
+import { ExamplesComponent } from '../../components/examples/examples.component';
+import { FooterComponent } from '../../components/footer/footer.component';
+import { MatButtonModule, MatCardModule } from '@angular/material';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('IndexComponent', () => {
     let component: IndexComponent;
@@ -11,8 +16,20 @@ describe('IndexComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [FontAwesomeModule],
-            declarations: [IndexComponent, HeaderComponent, HeroComponent]
+            imports: [
+                FontAwesomeModule,
+                RouterTestingModule,
+                MatButtonModule,
+                MatCardModule
+            ],
+            declarations: [
+                IndexComponent,
+                HeaderComponent,
+                HeroComponent,
+                AboutMeComponent,
+                ExamplesComponent,
+                FooterComponent
+            ]
         }).compileComponents();
     }));
 

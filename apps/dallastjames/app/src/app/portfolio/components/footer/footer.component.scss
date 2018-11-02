@@ -1,0 +1,28 @@
+@import 'apps/dallastjames/app/src/variables.scss';
+
+:host {
+    .footer {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 20px 60px 20px 80px;
+        background-color: color(primary);
+    }
+
+    h4 {
+        color: white;
+        font-size: 26px;
+    }
+
+    .spacer {
+        flex: 1;
+    }
+
+    .social-icons {
+        a {
+            font-size: 26px;
+            color: white;
+            margin-left: 20px;
+        }
+    }
+}

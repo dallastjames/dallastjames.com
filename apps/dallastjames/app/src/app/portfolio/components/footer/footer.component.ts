@@ -2,14 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from '@dtj/env';
 
 @Component({
-    selector: 'dallastjames-hero',
-    templateUrl: './hero.component.html',
-    styleUrls: ['./hero.component.scss']
+    selector: 'dallastjames-footer',
+    templateUrl: './footer.component.html',
+    styleUrls: ['./footer.component.scss']
 })
-export class HeroComponent implements OnInit {
-    public heroQuote: string = `
-        BE LEGENDARY
-    `;
+export class FooterComponent implements OnInit {
     public twitter: string = environment.social.twitter;
     public linkedin: string = environment.social.linkedin;
 

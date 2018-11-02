@@ -1,0 +1,51 @@
+@import 'apps/dallastjames/app/src/variables.scss';
+
+:host {
+    .about-me {
+        margin: 8% 0 10%;
+    }
+
+    h2 {
+        font-size: 36px;
+        color: color(text);
+        text-align: center;
+        margin-bottom: 4px;
+    }
+
+    .sub-text {
+        color: color(text);
+        margin: 4px auto 20px;
+        text-align: center;
+    }
+
+    .summary-cards {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5% 0 20px;
+
+        mat-card {
+            margin: 0 20px;
+
+            fa-icon {
+                font-size: 36px;
+                color: color(primary);
+                display: block;
+                text-align: center;
+            }
+
+            h3 {
+                text-align: center;
+                font-size: 26px;
+                color: color(text);
+            }
+
+            p {
+                text-align: center;
+                font-size: 16px;
+                color: color(text);
+                max-width: 160px;
+            }
+        }
+    }
+}
