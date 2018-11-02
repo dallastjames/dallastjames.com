@@ -26,7 +26,12 @@ module.exports = () => {
         customLaunchers: {
             ChromeHeadlessNoSandbox: {
                 base: 'ChromeHeadless',
-                flags: ['--no-sandbox', '--remote-debugging-port=9222']
+                flags: [
+                    '--no-sandbox',
+                    '--remote-debugging-port=9222',
+                    '--disable-dev-shm-usage',
+                    '--disable-software-rasterizer'
+                ]
             }
         },
         reporters: ['progress', 'kjhtml'],
