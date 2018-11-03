@@ -9,6 +9,9 @@ import { ExamplesComponent } from '../../components/examples/examples.component'
 import { FooterComponent } from '../../components/footer/footer.component';
 import { MatButtonModule, MatCardModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ExampleItemComponent } from '../../components/example-item/example-item.component';
+import { ExampleTitleComponent } from '../../components/example-title/example-title.component';
+import { ExampleDescriptionComponent } from '../../components/example-description/example-description.component';
 
 describe('IndexComponent', () => {
     let component: IndexComponent;
@@ -28,7 +31,10 @@ describe('IndexComponent', () => {
                 HeroComponent,
                 AboutMeComponent,
                 ExamplesComponent,
-                FooterComponent
+                FooterComponent,
+                ExampleItemComponent,
+                ExampleTitleComponent,
+                ExampleDescriptionComponent
             ]
         }).compileComponents();
     }));

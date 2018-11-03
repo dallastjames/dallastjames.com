@@ -10,6 +10,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { ExamplesComponent } from './components/examples/examples.component';
+import { ExampleItemComponent } from './components/example-item/example-item.component';
+import { ExampleTitleComponent } from './components/example-title/example-title.component';
+import { ExampleDescriptionComponent } from './components/example-description/example-description.component';
 
 @NgModule({
     imports: [
@@ -25,7 +28,10 @@ import { ExamplesComponent } from './components/examples/examples.component';
         HeroComponent,
         FooterComponent,
         AboutMeComponent,
-        ExamplesComponent
+        ExamplesComponent,
+        ExampleItemComponent,
+        ExampleTitleComponent,
+        ExampleDescriptionComponent
     ]
 })
 export class PortfolioModule {}

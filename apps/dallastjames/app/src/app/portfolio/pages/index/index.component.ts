@@ -18,8 +18,14 @@ export class IndexComponent implements OnInit, AfterViewInit {
     ngAfterViewInit(): void {
         this._activatedRoute.fragment.subscribe(frag => {
             if (!!frag) {
-                console.log('got frag', frag, this._document);
-                this._document.getElementById(frag).scrollIntoView();
+                const options: ScrollIntoViewOptions = {
+                    behavior: 'smooth',
+                    block: 'start'
+                };
+                const el = this._document.getElementById(frag);
+                setTimeout(() => {
+                    el.scrollIntoView(options);
+                });
             }
         });
     }

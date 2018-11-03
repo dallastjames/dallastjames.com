@@ -1,5 +1,79 @@
+@import 'apps/dallastjames/app/src/variables.scss';
+
 :host {
     .examples {
         margin: 10% 0;
+    }
+
+    h2 {
+        font-size: 36px;
+        color: color(text);
+        text-align: center;
+        margin-bottom: 4px;
+    }
+
+    .sub-text {
+        color: color(text);
+        margin: 4px auto 20px;
+        text-align: center;
+    }
+
+    .grid {
+        height: 1000px;
+        width: 1000px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: [left] 32% [space1] 2% [center] 32% [space2] 2% [right] 32%;
+        grid-template-rows: [top] 32% [space3] 2% [middle] 32% [space4] 2% [bottom] 32%;
+
+        dallastjames-example-item {
+            background-color:yellow;
+
+            &.top {
+                grid-row: top / space3;
+            }
+
+            &.middle {
+                grid-row: middle / space4;
+            }
+
+            &.bottom {
+                grid-row: bottom;
+            }
+
+            &.left {
+                grid-column: left / space1;
+            }
+
+            &.center {
+                grid-column: center / space2;
+            }
+
+            &.right {
+                grid-column: right;
+            }
+        }
+
+        .portfolio-description {
+            background-color: color(primary);
+            grid-column: left / space2;
+            grid-row: middle / space4;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h3 {
+                font-size: 36px;
+                margin: 0;
+            }
+
+            p {
+                color: rgba(255, 255, 255, 0.8);
+                max-width: 300px;
+                text-align: center;
+            }
+        }
     }
 }

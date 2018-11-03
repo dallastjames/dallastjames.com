@@ -17,10 +17,14 @@
         white-space: nowrap;
         font-size: 20px;
         min-width: 120px;
-        color: color(text);
 
-        &:hover {
-            color: color(font-white-darker);
+        a {
+            color: color(text);
+            text-decoration: none;
+
+            &:hover {
+                color: color(font-white-darker);
+            }
         }
     }
 
@@ -29,6 +33,7 @@
             font-size: 20px;
             padding: 8px 20px;
             border-radius: 30px;
+            color: white;
         }
 
         img {
