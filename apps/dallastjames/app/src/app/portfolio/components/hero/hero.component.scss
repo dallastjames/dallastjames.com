@@ -48,13 +48,17 @@ $header-right-padding: 60px;
         display: flex;
         align-items: center;
 
-        &.right {
+        &.left {
             background-color: color(primary);
             flex: 3;
             z-index: 9;
+
+            @media (max-width: 1280px) {
+                display: none;
+            }
         }
 
-        &.left {
+        &.right {
             flex: 7;
             z-index: 8;
         }

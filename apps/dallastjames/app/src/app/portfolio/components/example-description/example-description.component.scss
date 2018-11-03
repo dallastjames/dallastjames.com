@@ -1,0 +1,9 @@
+@import 'apps/dallastjames/app/src/variables.scss';
+
+:host {
+    p {
+        padding: 0 20px;
+        text-align: center;
+        color: color(text);
+    }
+}

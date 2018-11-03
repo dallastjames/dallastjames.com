@@ -27,8 +27,6 @@
         grid-template-rows: [top] 32% [space3] 2% [middle] 32% [space4] 2% [bottom] 32%;
 
         dallastjames-example-item {
-            background-color:yellow;
-
             &.top {
                 grid-row: top / space3;
             }
