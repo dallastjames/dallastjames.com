@@ -12,19 +12,8 @@ export class ExampleItemComponent implements OnInit {
     public set image(value: string) {
         if (!!value) {
             this._image = value;
-            this.style = {
-                ...this.style,
-                'background-image': this._sanitizer.bypassSecurityTrustStyle(
-                    value
-                )
-            };
-            console.log('setting style', value, this.style);
         }
     }
-
-    @Input() public dark: boolean = false;
-
-    public style: { [key: string]: any } = {};
 
     constructor(private _sanitizer: DomSanitizer) {}
 
