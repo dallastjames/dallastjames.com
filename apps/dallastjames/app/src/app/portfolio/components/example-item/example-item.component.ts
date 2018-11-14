@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -14,6 +14,8 @@ export class ExampleItemComponent implements OnInit {
             this._image = value;
         }
     }
+
+    @Output() public seeMore: EventEmitter<void> = new EventEmitter<void>();
 
     constructor(private _sanitizer: DomSanitizer) {}
 

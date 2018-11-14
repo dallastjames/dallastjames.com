@@ -9,4 +9,8 @@ export class ExamplesComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {}
+
+    public expandExample(): void {
+        console.log('expand example');
+    }
 }

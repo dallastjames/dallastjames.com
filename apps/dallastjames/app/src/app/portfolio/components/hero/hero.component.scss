@@ -30,6 +30,21 @@ $header-right-padding: 60px;
             font-weight: bold;
             font-size: 38px;
             margin: 0;
+
+            @media (max-width: 1280px) {
+                color: color(primary);
+            }
+        }
+
+        @media (max-width: 850px) {
+            h3 {
+                flex: 1;
+                text-align: center;
+            }
+
+            .spacer, .header-insert {
+                display: none;
+            }
         }
     }
 
@@ -125,12 +140,20 @@ $header-right-padding: 60px;
                 @media (max-width: 1280px) {
                     margin-top: 0;
                 }
+
+                @media (max-width: 680px) {
+                    padding-left: 0;
+                }
             }
 
             .title h1 {
                 color: color(primary);
                 font-size: 120px;
                 margin: 0;
+
+                @media (max-width: 680px) {
+                    line-height: 96px;
+                }
             }
 
             .title .dark {
@@ -142,6 +165,10 @@ $header-right-padding: 60px;
                 font-size: 28px;
                 margin: -28px 0 0;
                 text-align: center;
+
+                @media (max-width: 680px) {
+                    margin: 6px 0 0;
+                }
             }
 
             .my-image {
@@ -173,6 +200,10 @@ $header-right-padding: 60px;
                 font-size: 26px;
                 height: 100%;
                 margin-left: 40px;
+
+                @media (max-width: 680px) {
+                    display: none;
+                }
 
                 h3 {
                     margin: 20px;

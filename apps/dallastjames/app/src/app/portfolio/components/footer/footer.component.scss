@@ -3,15 +3,32 @@
 :host {
     .footer {
         height: 100%;
-        display: flex;
-        align-items: center;
         padding: 20px 60px 20px 80px;
         background-color: color(primary);
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+    }
+
+    .mobile {
+        display: none;
+        text-align: right;
+
+        @media (max-width: 850px) {
+            display: block;
+        }
+
+        a {
+            color: white;
+        }
     }
 
     h4 {
         color: white;
         font-size: 26px;
+        margin: 6px 0 12px;
     }
 
     .spacer {
