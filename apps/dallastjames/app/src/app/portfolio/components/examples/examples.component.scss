@@ -19,12 +19,14 @@
     }
 
     .grid {
-        height: 1000px;
+        // height: 1000px;
+        height: calc(1000px * .66);
         width: 1000px;
         margin: auto;
         display: grid;
         grid-template-columns: [left] 32% [space1] 2% [center] 32% [space2] 2% [right] 32%;
-        grid-template-rows: [top] 32% [space3] 2% [middle] 32% [space4] 2% [bottom] 32%;
+        // grid-template-rows: [top] 32% [space3] 2% [middle] 32% [space4] 2% [bottom] 32%;
+        grid-template-rows: [middle] 49% [space4] 2% [bottom] 49%;
 
         dallastjames-example-item {
             &.top {
