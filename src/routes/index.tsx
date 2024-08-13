@@ -43,7 +43,7 @@ export default function Home() {
               <Content>
                 <div class="mx-auto max-w-2xl lg:max-w-5xl">
                   <div class="max-w-2xl lg:max-w-5xl">
-                    <h1 class="text-4xl font-bold tracking-tight text-neutral-100 sm:text-5xl">
+                    <h1 class="text-4xl font-bold tracking-tight text-neutral-100 sm:text-5xl max-w-[720px]">
                       👋 I'm Dallas James, an engineer and product manager.
                     </h1>
                     <p class="mt-6 text-neutral-400">
