@@ -46,14 +46,13 @@ export default function Home() {
                     </h1>
                     <p class="mt-6 text-neutral-400">
                       My very first project was building games using RPG Maker
-                      XP, scripting in Ruby. At the time, I didn't quite
-                      understand what I was doing, but I knew that I loved being
-                      able to have a vision for something, then make it a
-                      reality through code. That passion has stayed with me as I
-                      became a professional software engineer, and is what drove
-                      me to become a product manager. Living in the intersection
-                      of technology, users, and creativity is where I've found
-                      my happy place.
+                      XP, scripting in Ruby. At the time, discovered that I
+                      loved being able to have a vision for something, then make
+                      it a reality through code. That passion has stayed with me
+                      as I became a professional software engineer, and is what
+                      drove me to become a product manager. Living in the
+                      intersection of technology, users, and creativity is where
+                      I've found my happy place.
                     </p>
                     <div class="mt-6 flex gap-6">
                       <IconLink

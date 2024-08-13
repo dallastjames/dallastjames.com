@@ -18,6 +18,7 @@ export function WorkItem({
         <A
           href={companyHref}
           target="_blank"
+          rel="noopener noreferrer"
           class="w-full flex-none text-sm font-medium text-neutral-100"
         >
           <span class="absolute -inset-x-4 -inset-y-1 z-20 sm:-inset-x-4 sm:rounded-2xl" />

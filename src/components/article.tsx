@@ -12,7 +12,7 @@ export function ArticlePreview({
     <article class="group relative flex flex-col items-start">
       <h2 class="text-neutral-100 font-semibold tracking-tight">
         <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-neutral-800/50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl" />
-        <A href={href}>
+        <A href={href} target="_blank" rel="noopener noreferrer">
           <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
           <span class="relative z-10">{title}</span>
         </A>
