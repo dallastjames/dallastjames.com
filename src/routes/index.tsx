@@ -1,8 +1,10 @@
 import { Title } from "@solidjs/meta";
+import { A } from "@solidjs/router";
 import { For } from "solid-js";
 import { ArticlePreview } from "~/components/article";
 import { Container, Content, IconLink } from "~/components/structures";
 import {
+  EmailSVG,
   GithubLogo,
   LinkedInLogo,
   TwitterLogo,
@@ -91,6 +93,18 @@ export default function Home() {
                       </For>
                     </div>
                     <div class="space-y-10 lg:pl-16 xl:pl-24">
+                      <div class="rounded-2xl border border-neutral-700/40 p-6">
+                        <h2 class="flex text-sm font-semibold text-neutral-100">
+                          <EmailSVG />
+                          <span class="ml-3">Contact Me</span>
+                        </h2>
+                        <p class="mt-6 text-neutral-400 text-sm">
+                          Email:{" "}
+                          <a href="mailto:iam@dallastjames.dev" target="_blank">
+                            iam@dallastjames.dev
+                          </a>
+                        </p>
+                      </div>
                       <div class="rounded-2xl border border-neutral-700/40 p-6">
                         <h2 class="flex text-sm font-semibold text-neutral-100">
                           <WorkSVG />
