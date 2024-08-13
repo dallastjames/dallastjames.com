@@ -1,4 +1,5 @@
 import { Title } from "@solidjs/meta";
+import { For } from "solid-js";
 import { ArticlePreview } from "~/components/article";
 import { Container, Content, IconLink } from "~/components/structures";
 import {
@@ -8,6 +9,8 @@ import {
   WorkSVG,
 } from "~/components/svgs";
 import { WorkItem } from "~/components/work";
+import { allProjects } from "~/utils/projects";
+import { allWork } from "~/utils/work";
 
 export default function Home() {
   return (
@@ -19,7 +22,7 @@ export default function Home() {
         </Container>
       </div>
       <div class="relative flex w-full flex-col">
-        <header class="relative flex flex-col pt-40">
+        <header class="relative flex flex-col mt-32">
           <Container>
             <Content>
               <div class="mx-auto max-w-2xl lg:max-w-5xl">
@@ -39,13 +42,18 @@ export default function Home() {
                 <div class="mx-auto max-w-2xl lg:max-w-5xl">
                   <div class="max-w-2xl">
                     <h1 class="text-4xl font-bold tracking-tight text-neutral-100 sm:text-5xl">
-                      Hey, I'm Dallas James and I am a person!
+                      👋 I'm Dallas James, an engineer and product manager.
                     </h1>
                     <p class="mt-6 text-neutral-400">
-                      Here's some stuff about me that i'll fill out later!.
-                      Hurray for a bunch of filler text that is just here to
-                      fill up the space so we can make sure it looks good with
-                      all sorts of content on all sorts of devices.
+                      My very first project was building games using RPG Maker
+                      XP, scripting in Ruby. At the time, I didn't quite
+                      understand what I was doing, but I knew that I loved being
+                      able to have a vision for something, then make it a
+                      reality through code. That passion has stayed with me as I
+                      became a professional software engineer, and is what drove
+                      me to become a product manager. Living in the intersection
+                      of technology, users, and creativity is where I've found
+                      my happy place.
                     </p>
                     <div class="mt-6 flex gap-6">
                       <IconLink
@@ -69,28 +77,40 @@ export default function Home() {
           <div class="sm:px-8 mt-24 md:mt-28">
             <Container>
               <Content>
-                <div class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-                  <div class="flex flex-col gap-16">
-                    <ArticlePreview
-                      title="A cool looking article"
-                      description="This is a description of the best article you've ever read. Unfortunately, it's just a placeholder so you'll never actually get to read what it is. That's too bad."
-                      href="#"
-                      date="September 10, 2024"
-                    />
-                  </div>
-                  <div class="space-y-10 lg:pl-16 xl:pl-24">
-                    <div class="rounded-2xl border border-neutral-700/40 p-6">
-                      <h2 class="flex text-sm font-semibold text-neutral-100">
-                        <WorkSVG />
-                        <span class="ml-3">Work</span>
-                      </h2>
-                      <ol class="mt-6 space-y-4">
-                        <WorkItem
-                          company="Cool Company"
-                          role="Aweomse Role"
-                          years="1900-Present"
-                        />
-                      </ol>
+                <div class="mx-auto max-w-2xl lg:max-w-5xl">
+                  <div class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
+                    <div class="flex flex-col gap-16">
+                      <For each={allProjects}>
+                        {(project) => (
+                          <ArticlePreview
+                            title={project.title}
+                            description={project.description}
+                            href={project.href}
+                            type={project.type}
+                          />
+                        )}
+                      </For>
+                    </div>
+                    <div class="space-y-10 lg:pl-16 xl:pl-24">
+                      <div class="rounded-2xl border border-neutral-700/40 p-6">
+                        <h2 class="flex text-sm font-semibold text-neutral-100">
+                          <WorkSVG />
+                          <span class="ml-3">Work</span>
+                        </h2>
+                        <ol class="mt-6 space-y-4">
+                          <For each={allWork}>
+                            {(work) => (
+                              <WorkItem
+                                company={work.company}
+                                companyImgSrc={work.companyImgSrc}
+                                companyHref={work.companyHref}
+                                role={work.role}
+                                years={work.years}
+                              />
+                            )}
+                          </For>
+                        </ol>
+                      </div>
                     </div>
                   </div>
                 </div>
