@@ -31,7 +31,7 @@ function TypeDisplay({ type }: { type: string }) {
         class="absolute inset-y-0 left-0 flex items-center"
         aria-hidden="true"
       >
-        <span class="h-4 w-0.5 rounded-full bg-neutral-500" />
+        <span class="h-4 w-0.5 rounded-full bg-indigo-500" />
       </span>
       {type}
     </span>

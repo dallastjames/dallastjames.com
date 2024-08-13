@@ -16,7 +16,7 @@ export const allProjects: ProjectItem[] = [
   {
     title: "RPG Sessions",
     description:
-      "RPG Sessions is the perfect blend of my own passions and building something complex that pushes me to learn and grow as a developer. My favorite projects are the ones that I want to use myself, and I've used this since day one. Launched in 2019, RPG Sessions has provided a realtime tabletop experience for over 100k users across both our website and Discord bot.",
+      "RPG Sessions is the perfect blend of my own passions and building something complex that pushes me to learn and grow as a developer. My favorite projects are the ones that I want to use myself, and I've used this since day one. Launched in 2019, RPG Sessions has provided a realtime tabletop experience for over 130k users across both our website and Discord bot.",
     href: "https://rpgsessions.com/",
     type: "Featured Project - Personal",
   },

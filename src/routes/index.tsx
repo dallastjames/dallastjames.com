@@ -31,7 +31,7 @@ export default function Home() {
                 <img
                   alt="Profile Picture"
                   src="./dallas-img.jpeg"
-                  class="rounded-full bg-neutral-800 h-16 w-16"
+                  class="rounded-full bg-neutral-800 h-32 w-32 md:h-48 md:w-48"
                 />
               </div>
             </Content>

@@ -11,7 +11,7 @@ export default createHandler(() => (
           <link rel="icon" href="/dallas-img.ico" />
           {assets}
         </head>
-        <body class="flex root-background">
+        <body class="flex">
           <div id="app" class="w-full h-full">
             {children}
           </div>
