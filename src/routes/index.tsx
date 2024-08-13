@@ -22,10 +22,10 @@ export default function Home() {
         </Container>
       </div>
       <div class="relative flex w-full flex-col">
-        <header class="relative flex flex-col mt-32">
+        <header class="relative flex flex-col mt-20 lg:mt-32">
           <Container>
             <Content>
-              <div class="mx-auto max-w-2xl lg:max-w-5xl">
+              <div class="mx-auto max-w-2xl lg:max-w-5xl px-0 sm:px-8 xl:px-0">
                 <img
                   alt="Profile Picture"
                   src="./dallas-img.jpeg"
@@ -40,7 +40,7 @@ export default function Home() {
             <Container>
               <Content>
                 <div class="mx-auto max-w-2xl lg:max-w-5xl">
-                  <div class="max-w-2xl">
+                  <div class="max-w-2xl lg:max-w-5xl">
                     <h1 class="text-4xl font-bold tracking-tight text-neutral-100 sm:text-5xl">
                       👋 I'm Dallas James, an engineer and product manager.
                     </h1>
