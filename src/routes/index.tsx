@@ -4,6 +4,7 @@ import { For } from "solid-js";
 import { ArticlePreview } from "~/components/article";
 import { Container, Content, IconLink } from "~/components/structures";
 import {
+  BlueskyLogo,
   EmailSVG,
   GithubLogo,
   LinkedInLogo,
@@ -24,15 +25,25 @@ export default function Home() {
         </Container>
       </div>
       <div class="relative flex w-full flex-col">
-        <header class="relative flex flex-col mt-20 lg:mt-32">
-          <Container>
+        <header class="relative flex flex-col">
+          <img
+            src="./backdrop.jpg"
+            class="absolute inset-0 pb-10 w-full h-full object-cover max-w-7xl lg:px-8 mx-auto object-top"
+          />
+          <Container className="mt-20 lg:mt-32">
             <Content>
               <div class="mx-auto max-w-2xl lg:max-w-5xl px-0 sm:px-8 xl:px-0">
-                <img
-                  alt="Profile Picture"
-                  src="./dallas-img.jpeg"
-                  class="rounded-full bg-neutral-800 h-32 w-32 md:h-48 md:w-48"
-                />
+                <div class="relative flex justify-center items-center overflow-hidden rounded-full bg-neutral-800 h-32 w-32 md:h-48 md:w-48 shadow-lg">
+                  <img
+                    alt="Profile Picture"
+                    src="./dallas-img2.png"
+                    class="absolute inset-0 top-5 scale-125"
+                    style={{
+                      "object-fit": "cover",
+                      "object-position": "top",
+                    }}
+                  />
+                </div>
               </div>
             </Content>
           </Container>
@@ -64,6 +75,10 @@ export default function Home() {
                       <IconLink
                         href="https://www.linkedin.com/in/dallastjames/"
                         icon={<LinkedInLogo />}
+                      />
+                      <IconLink
+                        href="https://bsky.app/profile/dallastjames.dev"
+                        icon={<BlueskyLogo />}
                       />
                       <IconLink
                         href="https://x.com/dallastjames"

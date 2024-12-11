@@ -8,7 +8,7 @@ export default createHandler(() => (
         <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/dallas-img.ico" />
+          <link rel="icon" href="/dallas-img2.ico" />
           {assets}
         </head>
         <body class="flex">
