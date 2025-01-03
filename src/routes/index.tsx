@@ -59,7 +59,7 @@ export default function Home() {
                     </h1>
                     <p class="mt-6 text-neutral-400">
                       My very first project was building games using RPG Maker
-                      XP, scripting in Ruby. Idiscovered that I loved being able
+                      XP, scripting in Ruby. I discovered that I loved being able
                       to have a vision for something, then make it a reality
                       through code. That passion has stayed with me as I became
                       a professional software engineer, and is what drove me to
