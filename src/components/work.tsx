@@ -12,7 +12,11 @@ export function WorkItem({
     <li class="flex gap-4 relative group">
       <div class="absolute -inset-x-4 -inset-y-1 z-0 scale-95 bg-neutral-800/50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-4 sm:rounded-2xl" />
       <div class="relative mt-1 h-10 w-10 flex items-center justify-center rounded-full shadow-md shadow-neutral-800/5 border border-neutral-700/50 bg-neutral-800">
-        <img alt={company} src={companyImgSrc} class="h-7 w-7 rounded-full" />
+        <img
+          alt={company}
+          src={companyImgSrc}
+          class="h-7 w-7 rounded-full object-contain"
+        />
       </div>
       <div class="flex flex-auto flex-wrap gap-x-2">
         <A

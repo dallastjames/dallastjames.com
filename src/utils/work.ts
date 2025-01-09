@@ -8,11 +8,18 @@ export type WorkItem = {
 
 export const allWork: WorkItem[] = [
   {
+    company: "ABBYY",
+    companyImgSrc: "/abbyy.png",
+    companyHref: "https://abbyy.com/",
+    role: "Product Manager",
+    years: "2025 - Present",
+  },
+  {
     company: "Ionic",
     companyImgSrc: "/ionic.svg",
     companyHref: "https://ionic.io/",
     role: "Product Manager",
-    years: "2021 - Present",
+    years: "2021 - 2025",
   },
   {
     company: "Ionic",
