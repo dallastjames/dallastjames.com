@@ -11,7 +11,7 @@ export const allWork: WorkItem[] = [
     company: "ABBYY",
     companyImgSrc: "/abbyy.png",
     companyHref: "https://abbyy.com/",
-    role: "Product Manager",
+    role: "Senior Product Manager",
     years: "2025 - Present",
   },
   {
